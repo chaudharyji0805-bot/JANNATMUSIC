@@ -9,9 +9,15 @@ from AloneX.core.mongo import mongodb
 
 from .logging import LOGGER
 
-# Special user ID in hex code
-#SPECIAL_ID_HEX = "\x36\x30\x37\x39\x39\x34\x33\x31\x31\x31"
-#SPECIAL_ID = int(SPECIAL_ID_HEX.encode().decode('unicode_escape'))
+
+# -------------------------------
+# SPECIAL ID (safe define)
+# -------------------------------
+try:
+    SPECIAL_ID = int(getattr(config, "SPECIAL_ID", 0) or 0)
+except Exception:
+    SPECIAL_ID = 0
+
 
 SUDOERS = filters.user()
 
@@ -67,7 +73,7 @@ async def sudo():
 
 def heroku():
     global HAPP
-    if is_heroku:
+    if is_heroku():   # <-- FIXED
         if config.HEROKU_API_KEY and config.HEROKU_APP_NAME:
             try:
                 Heroku = heroku3.from_key(config.HEROKU_API_KEY)
@@ -75,5 +81,5 @@ def heroku():
                 LOGGER(__name__).info(f"Heroku App Configured")
             except BaseException:
                 LOGGER(__name__).warning(
-                    f"Please make sure your Heroku API Key and Your App name are configured correctly in the heroku."
+                    "Please make sure your Heroku API Key and App name are correct."
                 )
