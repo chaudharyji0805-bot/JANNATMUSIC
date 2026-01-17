@@ -6,9 +6,9 @@ import yt_dlp
 from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message
 from youtubesearchpython.__future__ import VideosSearch
-from Tune.utils.formatters import time_to_seconds
+from AloneX.utils.formatters import time_to_seconds
 import aiohttp
-from Tune import LOGGER
+from AloneX import LOGGER
 
 YOUR_API_URL = None
 API_URL = getenv("API_URL", 'https://console.nexgenbots.xyz')
@@ -16,7 +16,7 @@ API_KEY = getenv("API_KEY", '30DxNexGenBotsbb8686')
 
 async def load_api_url():
     global YOUR_API_URL
-    logger = LOGGER("Tune.platforms.Youtube.py")
+    logger = LOGGER("AloneX.platforms.Youtube.py")
     
     try:
         async with aiohttp.ClientSession() as session:
