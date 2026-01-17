@@ -1,54 +1,56 @@
-\import os
-from typing import List
+import os
+from typing import Dict
 
 import yaml
 
-languages = {}
-languages_present = {}
+languages: Dict[str, dict] = {}
+languages_present: Dict[str, str] = {}
 
 
-def get_string(lang: str):
-    return languages.get(lang, languages["en"])
+def get_string(lang: str) -> dict:
+    # fallback to english if lang missing
+    return languages.get(lang) or languages.get("en") or {}
 
 
-LANG_PATH = "./strings/langs/"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+LANG_DIR = os.path.join(BASE_DIR, "langs")
+EN_FILE = os.path.join(LANG_DIR, "en.yml")
 
 
-# Load English first (base language)
-try:
-    languages["en"] = yaml.safe_load(
-        open(f"{LANG_PATH}en.yml", encoding="utf8")
-    )
-    languages_present["en"] = languages["en"]["name"]
-except Exception as e:
-    print(f"[LANG ERROR] Failed to load en.yml : {e}")
-    exit()
-
-
-for filename in os.listdir(LANG_PATH):
-
-    if not filename.endswith(".yml"):
-        continue
-
-    language_name = filename[:-4]
-
-    if language_name == "en":
-        continue
-
+def _load_yaml(path: str) -> dict:
     try:
-        languages[language_name] = yaml.safe_load(
-            open(LANG_PATH + filename, encoding="utf8")
-        )
+        with open(path, encoding="utf8") as f:
+            data = yaml.safe_load(f) or {}
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+# Load English first (must exist)
+languages["en"] = _load_yaml(EN_FILE)
+languages_present["en"] = languages["en"].get("name", "English")
+
+# Load other languages
+try:
+    for filename in os.listdir(LANG_DIR):
+        if not filename.endswith(".yml"):
+            continue
+
+        language_name = filename[:-4]
+        if language_name == "en":
+            continue
+
+        lang_path = os.path.join(LANG_DIR, filename)
+        languages[language_name] = _load_yaml(lang_path)
 
         # Fill missing keys from English
-        for item in languages["en"]:
-            if item not in languages[language_name]:
-                languages[language_name][item] = languages["en"][item]
+        for key, val in languages["en"].items():
+            if key not in languages[language_name]:
+                languages[language_name][key] = val
 
-        # Save language display name
-        languages_present[language_name] = languages[language_name]["name"]
+        # Register language display name
+        languages_present[language_name] = languages[language_name].get("name", language_name)
 
-    except Exception as e:
-        print(f"[LANG ERROR] Issue in {filename} : {e}")
-        print("Skipping this language file and continuing...")
-        continue
+except Exception as e:
+    # Don't crash bot because of language files
+    print(f"There is some issue with the language file inside bot: {e}")
