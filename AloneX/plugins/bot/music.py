@@ -31,14 +31,14 @@ async def start(_, msg):
           InlineKeyboardButton("ᴠɪᴩ ᴅᴇᴠᴀ", url="https://t.me/btw_deva")
         ],
         [
-          InlineKeyboardButton("SUPPORT CHANNEL", url="https://t.me/VERON_BOTS"),
-          InlineKeyboardButton("SUPPORT GROUP", url="https://t.me/VERON_SUPPORTS"),
+          InlineKeyboardButton("SUPPORT CHANNEL", url="https://t.me/BotzEmpire"),
+          InlineKeyboardButton("SUPPORT GROUP", url="https://t.me/Yaaro_kimehfill"),
           ],
                [
                 InlineKeyboardButton("SHAYRI CHANNEL ", url="https://t.me/Matlabi_Duniyah"),
 ],
 [
-InlineKeyboardButton("DPZ CHANNEL ", url="https://t.me/Veron_pfp"),
+InlineKeyboardButton("about ", url="https://t.me/@AboutDeva"),
 
         ]]
     
