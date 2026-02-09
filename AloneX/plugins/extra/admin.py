@@ -23,19 +23,7 @@ from pyrogram.enums import ChatType, ChatMemberStatus
 
 LOGGER = getLogger(__name__)
 
-kickpic = [
-    "https://graph.org/file/210751796ff48991b86a3.jpg",
-    "https://graph.org/file/7b4924be4179f70abcf33.jpg",
-    "https://graph.org/file/f6d8e64246bddc26b4f66.jpg",
-]
 
-button = [
-    [
-        InlineKeyboardButton(
-            text="\x41\x6C\x6F\x6E\x65\x20\x43\x6F\x64\x65\x72", url="\x68\x74\x74\x70\x73\x3A\x2F\x2F\x74\x2E\x6D\x65\x2F\x41\x6C\x6F\x6E\x65\x48\x75\x56\x61\x69"
-        )
-    ]
-]
 
 def mention(user, name, mention=True):
     if mention:
