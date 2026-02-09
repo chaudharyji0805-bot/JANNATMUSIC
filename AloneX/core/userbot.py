@@ -52,9 +52,9 @@ class Userbot(Client):
             await self.one.start()
             try:
                 await self.one.join_chat("Matlabi_Duniyah")
-                await self.one.join_chat("Veron_bots")
+                await self.one.join_chat("BotzEmpire")
                 await self.one.join_chat("AboutDeva")
-                await self.one.join_chat("ATTACHME9T")
+                await self.one.join_chat("Yaaro_kimehfill")
                 await self.one.join_chat("TaskPaypro")
             except:
                 pass
@@ -76,9 +76,9 @@ class Userbot(Client):
             await self.two.start()
             try:
                 await self.one.join_chat("Matlabi_Duniyah")
-                await self.one.join_chat("Veron_bots")
+                await self.one.join_chat("BotzEmpire")
                 await self.one.join_chat("AboutDeva")
-                await self.one.join_chat("ATTACHME9T")
+                await self.one.join_chat("Yaaro_kimehfill")
                 await self.one.join_chat("TaskPaypro")
             except:
                 pass
@@ -100,9 +100,9 @@ class Userbot(Client):
             await self.three.start()
             try:
                 await self.one.join_chat("Matlabi_Duniyah")
-                await self.one.join_chat("Veron_bots")
+                await self.one.join_chat("BotzEmpire")
                 await self.one.join_chat("AboutDeva")
-                await self.one.join_chat("ATTACHME9T")
+                await self.one.join_chat("Yaaro_kimehfill")
                 await self.one.join_chat("TaskPaypro")
             except:
                 pass
@@ -124,9 +124,9 @@ class Userbot(Client):
             await self.four.start()
             try:
                 await self.one.join_chat("Matlabi_Duniyah")
-                await self.one.join_chat("Veron_bots")
+                await self.one.join_chat("BotzEmpire")
                 await self.one.join_chat("AboutDeva")
-                await self.one.join_chat("ATTACHME9T")
+                await self.one.join_chat("Yaaro_kimehfill")
                 await self.one.join_chat("TaskPaypro")
             except:
                 pass
@@ -148,9 +148,9 @@ class Userbot(Client):
             await self.five.start()
             try:
                 await self.one.join_chat("Matlabi_Duniyah")
-                await self.one.join_chat("Veron_bots")
+                await self.one.join_chat("BotzEmpire")
                 await self.one.join_chat("AboutDeva")
-                await self.one.join_chat("ATTACHME9T")
+                await self.one.join_chat("Yaaro_kimehfill")
                 await self.one.join_chat("TaskPaypro")
             except:
                 pass
