@@ -27,7 +27,9 @@ TgCrypto==1.2.5
 Unidecode==1.4.0
 werkzeug==3.1.3
 yt-dlp>=2025.4.30
-
-# GitHub packages (Heroku compatible)
-git+https://github.com/alexmercerind/youtube-search-python.git@master#egg=youtubesearchpython
+youtube_search
+youtube-search-python
+googlesearch-python
+#git+https://github.com/joetats/youtube_search@master
+#git+https://github.com/alexmercerind/youtube-search-python@main
 git+https://github.com/TeamAloneOp/yt-dlp-youtube-oauth2.git#egg=yt-dlp-oauth2
