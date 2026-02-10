@@ -22,7 +22,7 @@ YOUR_API_URL = None
 
 # Env based (optional)
 API_URL = getenv("API_URL", FALLBACK_API_URL)
-API_KEY = getenv("API_KEY", "30DxNexGenBotsbb8686")
+API_KEY = getenv("API_KEY", "NxGBNexGenBots85510a")
 
 
 async def load_api_url():
