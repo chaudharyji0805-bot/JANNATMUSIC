@@ -6,7 +6,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
 from AloneX import LOGGER, app, userbot
-from AloneX.core.call import Hotty
+from AloneX.core.call import Alone
 from AloneX.misc import sudo
 from AloneX.plugins import ALL_MODULES
 from AloneX.utils.database import get_banned_users, get_gbanned
