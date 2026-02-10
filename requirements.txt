@@ -13,8 +13,8 @@ lyricsgenius==3.6.5
 motor==3.7.1
 
 # ntgcalls + pytgcalls fixed versions
-ntgcalls==0.0.16
-py-tgcalls==0.3.7
+ntgcalls==2.1.0
+py-tgcalls==1.2.0
 
 pillow==12.1.0
 psutil==7.2.1
