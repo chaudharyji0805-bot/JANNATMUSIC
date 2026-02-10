@@ -11,7 +11,8 @@ heroku3==5.1.4
 httpx[http2]==0.28.1
 lyricsgenius==3.6.5
 motor==3.7.1
-ntgcalls==0.6.0
+ntgcalls==2.1.0   # old 0.6.0 ko replace kar diya
+# baki packages jaisa tha waisa hi
 pillow==12.1.0
 psutil==7.2.1
 py-tgcalls==1.1.6
