@@ -3,8 +3,8 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 OWNERS = "7538572906"
-from VIP_DEVA import app
-from VIP_DEVA.utils.database import add_served_chat, get_assistant
+from AloneX import app
+from AloneX.utils.database import add_served_chat, get_assistant
 
 
 @app.on_message(filters.command("gadd") & filters.user(int(OWNERS)))
