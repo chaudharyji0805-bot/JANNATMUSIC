@@ -12,4 +12,4 @@ RUN python3 -m pip install --upgrade pip setuptools
 RUN apt-get update && apt-get install -y git
 RUN pip3 install --no-cache-dir --upgrade --requirement requirements.txt
 
-CMD bash start
+CMD ["bash", "start"]
